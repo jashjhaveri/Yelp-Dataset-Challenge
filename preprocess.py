@@ -28,8 +28,6 @@ for business in data:
             business_data["attributes"] = business["attributes"]
             output_data.append(business_data)
     #output_data.write("\n")
-    #count = count+1 
-    #if count==6:
-    #   break
+    
 with open(business_restaurants_path, "w") as output:
     json.dump(output_data, output)
