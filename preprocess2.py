@@ -28,16 +28,15 @@ with open(review_path) as review_file:
 #with open(reviews_business_restaurants_path, "w") as output:
     #    json.dump([], output)
 
-with open(reviews_business_restaurants_path) as output_file:
-    for review in reviews_data:
-
-        if review["business_id"] in business_ids:
-            review_data["business_id"] = review["business_id"]
-            review_data["stars"] = review["stars"]
-            review_data["text"] = review["text"]
-            review_data["date"] = review["date"]
-            review_data["votes"] = review["votes"]
-            reviews_data.append(review_data)
+for review in reviews_data:
+    review_data = {}
+    if review["business_id"] in business_ids:
+        review_data["business_id"] = review["business_id"]
+        review_data["stars"] = review["stars"]
+        review_data["text"] = review["text"]
+        review_data["date"] = review["date"]
+        review_data["votes"] = review["votes"]
+        reviews_data.append(review_data)
 
 print("Review file generated - ",reviews_data.count)
 
