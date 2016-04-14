@@ -1,6 +1,6 @@
 import json
 
-business_path = "yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json"
+business_path = "../yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json"
 business_restaurants_path = "Processed/business_restaurants.json"
 data = []
 
@@ -14,7 +14,7 @@ with open(business_path) as data_file:
 output_data = []
 
 for business in data:
-    print(business)
+    #print(business)
     business_data = {}
     
     for category in business["categories"]:
@@ -30,4 +30,4 @@ for business in data:
     #output_data.write("\n")
     
 with open(business_restaurants_path, "w") as output:
-    json.dump(output_data, output)
+    json.dump(output_data, output, indent=4)
