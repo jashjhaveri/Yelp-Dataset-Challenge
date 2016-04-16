@@ -21,14 +21,10 @@ for business in business_restaurants_data:
 print("Dict generated")
 
 #Generate review file
-
 print("Loading review file")
 
 with open(review_path) as review_file:
     all_reviews=[json.loads(line) for line in review_file]
-
-#with open(reviews_business_restaurants_path, "w") as output:
-    #    json.dump([], output)
 
 print("Review file loaded")
 
